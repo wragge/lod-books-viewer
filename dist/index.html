@@ -1,0 +1,318 @@
+<!doctype html> <html class="no-js" lang="en" ng-app="lodBook"> <head> <meta charset="utf-8"> <title></title> <meta name="description" content=""> <meta name="viewport" content="width=device-width"> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel="stylesheet" href="styles/vendor.26bad297.css"> <link rel="stylesheet" href="styles/app.e3c85d82.css">  <body ng-controller="AppCtrl"> <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]--> <div class="navbar navbar-default navbar-fixed-top" role="navigation" bs-navbar> <div class="navbar-header"> <a class="navbar-brand" href="#!/">{{ title[0] }}{{ title[1] }}{{ title[2] }}</a> </div> <ul class="nav navbar-nav pull-right"> <li data-match-route="/read.*"><a href="#!/read">Text</a></li> <li data-match-route="/people.*"><a href="#!/people">People</a></li> <li data-match-route="/resources.*"><a href="#!/resources">Resources</a></li> </ul> </div> <div ng-view></div> <div id="content"> <h1>&lsquo;A map and some pins&rsquo; &ndash; Open data and unlimited horizons</h1> <p>The Australian poet and writer <a about="http://localhost:9000/#!/people/edwin_james_brady" property="rdfs:label" class="sidebar-link">Edwin James Brady</a> and his family lived for many years in the isolation of far eastern Victoria &#8211; in a little town called Mallacoota.</p> <p>Here, from time to time, <span about="http://localhost:9000/#!/people/edwin_james_brady" property="rdfs:label" class="sidebar-link">Brady</span> amused himself by taking a map of Australia down from the wall and sticking pins in it. The pins, Brady explained in 1938, included labels such as &#8216;Hydro-electric supply base&#8217;, &#8217;Irrigation area, and &#8216;Area for tropical settlement&#8217;. The map and its pins were one expression of Brady&#8217;s life-long obsession with Australia&#8217;s potential for development &#8211; for progress.</p> <p>Maps and pins are probably more familiar now than they were in Brady&#8217;s time. We use them routinely for sharing our location, for plotting our travel, for finding the nearest restaurant. Maps and pins are one way that we document, understand and express our relationship to space.</p> <p>Brady, however, was interested in using his pins to highlight possibilities. In the late nineteenth and early twentieth centuries size mattered. With the nations of Europe jostling for land and colonial possessions, space become an index of power. When the Australian colonies came together in 1901 to form a nation, maps and spatial calculations abounded. Australia was big and so it&#8217;s <a about="http://localhost:9000/#!/resources/6" property="rdfs:label" class="sidebar-link">future was filled with promise</a>.</p> <p>In his travels around Australia, EJ Brady started to catalogue ways in which its vast, &#8216;empty&#8217; spaces might be turned to productive use. A hardy yeomanry armed with the latest science could transform these so-called &#8216;wastes&#8217;, and Brady was determined to bring these opportunities to the attention of the world.</p> <p>This evangelical crusade reached its high point in 1918, with the publication of his huge compendium, <em><a about="http://localhost:9000/#!/resources/0" property="rdfs:label" class="sidebar-link">Australia Unlimited</a></em> &#8211; 1139 pages of &#8216;<a about="http://localhost:9000/#!/resources/11" property="rdfs:label" class="sidebar-link">Romance History Facts and Figures</a>&#8217;.</p> <p>Space may no longer be invested with the same sense of swelling power, but our maps and pins still figure in calculations of progress. Now it is the data itself that awaits exploitation. Our carefully plotted movements, preferences and passions may well have value to governments, planners or advertisers. Data, according to some financial pundits, &#8216;is the new oil&#8217;.</p> <p>Whereas Brady traveled the land documenting its untapped riches, we can take his work and life and mine <strong>it</strong> for data &#8211; looking for new patterns and possibilities for analysis.</p> <h2>Section 2</h2> <p>Brady wasn&#8217;t the first to use the phrase &#8216;Australia Unlimited&#8217;, though he did much to make it familiar. By exploring the huge collection of digitised newspapers available through the National Library of Australia&#8217;s discovery service, <a about="http://trove.nla.gov.au/" property="rdfs:label" class="sidebar-link">Trove</a>, we can track the phrase through time.</p> <p>Brady was a skilled self-publicist and his research trips in 1912 were eagerly reported by the local press such as <em><a about="http://localhost:9000/#!/resources/8" property="rdfs:label" class="sidebar-link">the Barrier Miner</a></em> in Broken Hill and <em><a about="http://localhost:9000/#!/resources/9" property="rdfs:label" class="sidebar-link">the Cairns Post</a></em>. </p> <p>In 1918 the book was published, receiving a generally positive reception &#8211; as an <a about="http://localhost:9000/#!/resources/12" property="rdfs:label" class="sidebar-link">advertising leaflet</a> showed, even King George V thought the book was &#8216;of special interest&#8217;. In 1926, a copy of the book was presented to a visiting delegation from Japan. </p> <p>Over the years Brady sought to build on his modest successes, planning a variety of new editions and even a movie. But while his hopes were thwarted, the phrase itself lived on.</p> <p>In 1938 and 1952, there are references to a radio program called &#8216;Australia Unlimited&#8217;, apparently featuring young musical artists. Also in 1952 came <a about="http://localhost:9000/#!/resources/10" property="rdfs:label" class="sidebar-link">the news</a> that the author of <em>Australia Unlimited</em>, EJ Brady, had died in Mallacoota at the age of 83.</p> <p>Unfortunately copyright restrictions bring this analysis to a rather unnatural end in 1954. If we were able to follow it through until the present, we could see that from 1957 the phrase was used by a leading daily newspaper as the title of an annual advertising supplement detailing Australia&#8217;s possibilities for development. In 1958, it was adopted as a campaign slogan by Australia&#8217;s main Conservative party. In 1999 it was resurrected again by a major media company for a political and business symposium. Even now it provides the focus for a &#8216;branding&#8217; initiative supported by the federal government</p> <p>Graphs like this are pretty easy to interpret, but of course we should always ask how they were made. In this case I simply harvested the number of matching search results from the Trove newspaper database for each year. The tool I built to do this has been through several different versions and is now a freely-accessible web application called QueryPic. Anyone can quickly and easily create this sort of analysis just by entering a few keywords.</p> <p><a about="http://dhistory.org/querypic/" property="rdfs:label" class="sidebar-link">QueryPic</a> is one product of my experiments with the newspaper database over the last couple of years. I&#8217;ve also looked at <a about="http://dhistory.org/frontpages/" property="rdfs:label" class="sidebar-link">changes to the content of front pages</a>, I&#8217;ve created a combination <a about="http://newspapers.wraggelabs.com/fotp/" property="rdfs:label" class="sidebar-link">discovery interface and fridge poetry generator</a>, and I&#8217;ve even built a simple game called <a about="http://wraggelabs.com/shed/headline-roulette/" property="rdfs:label" class="sidebar-link">Headline Roulette</a> &#8211; which I&#8217;m told is strangely addictive.</p> <p>All of these tools and experiments take advantage of Trove&#8217;s API. I think it&#8217;s important to note that the delivery of cultural heritage resources in a machine-readable form, whether through a custom API or as Linked Open Data, provides more than just improved access or possibilities for aggregation. It opens those resources to transformation. It empowers us to move beyond &#8216;discovery&#8217; as a mode of interaction to analyse, extract, visualise and play.</p> <p>Using freely available tools we can extract named entities from a text, we can look for topic clusters across a collection of documents, we can find places and pin them to a map. With a little bit of code I can take the newspaper reports of Brady&#8217;s travels in 1912 and map them. With a bit more time I could take another of Brady&#8217;s travel books, <em><a about="http://localhost:9000/#!/resources/1" property="rdfs:label" class="sidebar-link">River Rovers</a></em>, available in digitised form through the Internet Archive, and plot his journey along Australia&#8217;s longest river, the Murray.</p> <p>Such transformations help us see resources in different ways &#8211; we can find new patterns, new problems, new questions. But transformation is a lossy business. I can put a pin in a map to show that Brady stopped off in Mildura on his voyage along the Murray. What is much harder to represent are the emotions that surrounded that visit. While he was there Brady received news of a friend&#8217;s death. &#8216;Bad news makes hateful the most pleasant place of abiding&#8217;, he wrote mournfully, &#8216;I strained to open the gate to go forth again into a wilderness of salt bush and sere sand&#8217;. Travel can be a form of escape.</p> <p>Digital humanist and designer Johanna Drucker has written about the problems of representing the human experience of time and space using existing digital tools. &#8216;If I am anxious&#8217;, she notes, &#8216;spatial and temporal dimensions are distinctly different than when I am not&#8217;. We do not experience our journeys in a straightforward linear fashion &#8211; as the accumulation of metres and minutes. We invest each footstep with associations and meanings, with hopes for the future and memories of the past. Drucker calls on humanities scholars to articulate these complexities and work towards the development of new techniques for modelling and visualising our data.</p> <blockquote> <p>&#8216;If human beings matter, in their individual and collective existence, not as data points in the management of statistical information, but as persons living actual lives, then finding ways to represent them within the digital environment is important.&#8217; </p> </blockquote> <p>In a similar way, <i>Australia Unlimited</i> is not just a catalogue of potentialities, or a passionate plea for national progress. It&#8217;s also the story of a struggling poet trying to find some way of supporting his family. Proceeds from the book enabled Brady to buy a plot of land in Mallacoota and build a modest home &#8211; I suspect that it wasn&#8217;t the same home that was <a about="http://localhost:9000/#!/resources/4" property="rdfs:label" class="sidebar-link">painted</a> by his wife, <a about="http://localhost:9000/#!/people/florence_brady" property="rdfs:label" class="sidebar-link">Florence</a>, in the 1950s. </p> <p>But even this small success was undermined. Distribution of the book was beset with difficulties and disappointments and and despite all his plans financial security remained elusive.</p> <p>Brady&#8217;s youngest daughter, Edna June, was born to his third wife Florence in 1946. What could he leave he leave her? A &#8216;modern edition&#8217; of <i>Australia Unlimited</i> lay completed but unpublished. &#8216;If it fails to find a publisher&#8217;, he remarked wistfully, &#8216;the MSS will be a liberal education for her after she has outgrown her father&#8217;s nonsense rhymes&#8217;. It was, he pondered, &#8216;a sort of heritage&#8217;.</p> <h2>Section 3</h2> <p>One of the things I love about being a historian is that the more we focus in on the past the more complicated it gets. People don&#8217;t always do what we expect them to, and that&#8217;s both infuriating and wonderful.</p> <p>Likewise, while we often have to clean up or &#8216;normalise&#8217; cultural heritage data in order to do things with it, we should value its intrinsic messiness as a reminder that it is shot through with history. Invested with the complexities of human experience it resists our attempts at reduction, and that too is both infuriating and wonderful.</p> <p>The glories of messiness challenge the extractive metaphors that often characterise our use of digital data. We&#8217;re not merely digging or mining or drilling for oil, because each journey into the data offers new possibilities &#8211; our horizons are opened, because our categories refuse to be closed. These are journeys of enrichment, interpretation and creation, not extraction.</p> <p>We&#8217;re putting stuff back, not taking it out.</p> <p>Cultural institutions have an exciting opportunity to help us work with this messiness. The challenge is not just to pump out data, anyone can do that. The challenge is to enrich the contexts within which we meet this data &#8211; to help us embrace nuance and uncertainty; to prevent us from taking the categories we use for granted.</p> <p>For all it&#8217;s exuberant optimism, a current of fear ran through <i>Australia Unlimited</i>. The <a about="http://localhost:9000/#!/resources/13" property="rdfs:label" class="sidebar-link">publisher's prospectus</a> boldly announced that it was a &#8216;Book with a Mission&#8217;. &#8216;A mere handful of White People&#8217;, perched uncomfortably near Asia&#8217;s &#8216;teeming centres of population&#8217;, could not expect to maintain unchallenged ownership of the continent and its potential riches. Australia&#8217;s survival as a white nation depended upon &#8216;Effective Occupation&#8217;, secured by a dramatic increase in population and the development of its vast, empty lands &ndash; &#8216;The Hour of Action is Now!&#8217;.</p> <p>In 1901, one of the first acts of the newly-established nation of Australia was to introduce legislation designed to keep the country &#8216;white&#8217;. Restrictions on immigration, administered through a complex bureaucratic system, formed the basis of what became known as the White Australia Policy.</p> <p>While the legislation was designed to keep non-white people out, an increase of the white population was seen as essential to strengthen security and legitimise Australia&#8217;s claim to the continent. Australia Unlimited was an exercise in national advertising aimed at filling the unsettling emptiness with sturdy, white settlers.</p> <p>But White Australia always a myth. As well as the indigenous population there were, in 1901, many thousands of people classified as non-white living in Australia. They came from China, India, Indonesia, Turkey and elsewhere. A growing number had been born in Australia. They were building lives, making families and contributing to the community.</p> <p>Here are some of them&#8230;</p> <p>I built this <a about="http://invisibleaustralians.org/faces/" property="rdfs:label" class="sidebar-link">wall of faces</a> using records held by the National Archives of Australia. If a non-white person resident in Australia wanted to travel overseas they needed to carry special documents. Without them they could be prevented from re-entering the country &#8211; from coming home. Many, many thousands of these documents are preserved within the National Archives.</p> <p>Kate Bagnall, a historian of Chinese-Australia, and I are exploring ways of exposing these records through an online project called <a about="http://invisibleaustralians.org/" property="rdfs:label" class="sidebar-link">Invisible Australians</a>.</p> <p>To build the wall I downloaded about 12,000 images from the Archives&#8217; website &#8211; representing just a fraction of one series relating to the administration of the White Australia Policy. Unfortunately there&#8217;s no machine-readable access to this data, so I had to resort to cruder means &#8211; reverse-engineering interfaces and screen-scraping.</p> <p>Once I had the images I ran them through a facial detection script to find and crop out the portraits. What we ended up with was a different way of accessing those records &#8211; an interface that brings the people to the front; an interface which is compelling, discomfiting, and often moving.</p> <p>The wall of faces also raises interesting questions about context. Some people might be concerned by the loss of context when images are presented in this way, although each portrait is linked back to the document it was derived from, and to the Archive&#8217;s own collection database. What is more important, I think, are the contexts that are gained.</p> <p>If you&#8217;re viewing digitised files on the National Archives&#8217; own website, you can only do so one page at a time. Each document is separate and isolated. What changes when you can see the whole of the file at once? I&#8217;ve built another tool that lets you do just that with any digitised file in the Archives&#8217; collection. You see the whole as well as the parts. You have a sense of the physical and conceptual shape of the file.</p> <p>In the case of the wall of faces, bringing the images together, from across files, helps us understand the scale of the White Australia Policy and how it impacted on the lives of individuals and communities. These were not isolated cases, these were thousands of ordinary people caught up in the workings of a vast bureaucratic system. The shift of context wrought by these digital manipulations allows us to see, and to feel, something quite different.</p> <p>And we can go the other way. In another experiment I created a userscript to insert faces back into Archives&#8217; website. A userscript is just a little bit of code that rewrites web pages as they load in your browser. In this case the script grabs images relating to the files that you&#8217;re looking at from Invisible Australians. </p> <p>So instead of this typical view of search results.</p> <p><img src="img/results-before.png"></p> <p>You see something quite different.</p> <p><img src="img/results-after.png"></p> <p>Instead of just the record metadata for an individual item, you see that there are <i>people inside</i>.</p> <p><img src="img/item-after.png"></p> <p>We also have to remember that the original context of these records was the administration of a system of racial surveillance and exclusion. The Archives preserves not only the records, but the recordkeeping systems that were used to monitor people&#8217;s movements. The remnants of that power adhere to the descriptive framework. There is power in the definition of categories and the elaboration of significance.</p> <p>Thinking about this I came across Duff and Harris&#8217;s call to develop &#8216;liberatory standards&#8217; for archival description. Standards, like categories, are useful. They enable us to share information and integrate systems. But standards also embody power. How can we take advantage of the cooperative utility of standards while remaining attuned to the workings of power?</p> <p>A liberatory descriptive standard, Duff and Harris argue: &#8216;would posit the record as always in the process of being made, the record opening out of the future. Such a standard would not seek to affirm the keeping of something already made. It would seek to affirm a process of open-ended making and re-making&#8217;.</p> <blockquote> <p>Holes would be created to allow the power to pour out.</p> </blockquote> <p>&#8216;Making and re-making&#8217; &#8211; sounds a lot like the open data credo of &#8216;re-use and re-mix&#8217; doesn&#8217;t it? I think it&#8217;s important to carry these sorts of discussions about power over into the broader realm of open data. After all, open data must always, to some extent, be closed. Categories have been determined, data has been normalised, decisions made about what is significant and why. There is power embedded in every CSV file, arguments in every API.</p> <p>This is inevitable. There is no neutral position. All we can do is encourage re-use of the data, recognising that every such use represents an opening out into new contexts and meanings. Beyond questions of access or format, data starts to become open <em>through its use</em>. In Duff and Harris&#8217;s words, we should see open data &#8216;as always in the process of being made&#8217;.</p> <p>What this means for cultural institutions is that the sharing of open data is not just about letting people create new apps or interfaces. It&#8217;s about letting people create new meanings. We should be encouraging them to use our APIs and LOD to poke holes in our assumptions to let the power pour out.</p> <p>There&#8217;s no magic formula for this beyond, perhaps, building confidence and creating opportunities. But I do think that Linked Open Data offers interesting possibilities as a framework for collaboration and contestation &#8211; for making and challenging meanings.</p> <p>We tend to think about Linked Open Data as a way of publishing &#8211; of pushing our data out. But in fact the production and consumption of Linked Open Data are closely entwined. The links in our data come from re-using identifiers and vocabularies that others have developed. The linked data cloud grows through a process of give and take, by many small acts of creation and consumption.</p> <p>There&#8217;s no reason why that process should be confined to cultural institutions, government departments, business, or research organisations. Linked Open Data enables any individual to talk about what&#8217;s important to them, while embedding their thoughts, collections, passions or obsessions within a global conversation. By sharing identifiers and vocabularies we create a platform for communication. Anyone can join in.</p> <p>So, if we want people to engage with our data, perhaps we need to encourage them to create their own.</p> <p>I&#8217;ve just been working on <a about="http://mosman1914-1918.net/" property="rdfs:label" class="sidebar-link">a project with the Mosman public library</a> in Sydney aimed at gathering information about the experiences of local servicepeople during World War One. There are many such projects happening around the world at the moment, but I think ours is interesting in a couple of ways. The first is a strong emphasis on linking things up. </p> <p>The are records relating to Australian service people available through the National Archives, the Australian War Memorial, and the Commonwealth War Graves Commission, but there are currently no links between these databases. I&#8217;ve created a series of screen scrapers that allow structured data to be easily extracted from these sources. That means that people can, for the first time, search across all these databases in one hit. It&#8217;s a very simple tool that I started coding to ease the boredom of a long bus trip &#8211; but it has proved remarkably popular with family historians.</p> <p>Once you&#8217;ve found entries in these databases, you can just cut and paste the URL into a form on the Mosman website and a script will retrieve the relevant data and attach it to the record of the the person you&#8217;re interested in. Linking to a service record in the National Archives, for example, will automatically create entries for the person&#8217;s birthplace and next-of-kin.</p> <p>The process of linking builds structures, and these structures will themselves all be available as Linked Open Data. Even more exciting is that the links will not only be between the holdings of cultural institutions. The stories, memories, photographs and documents that people contribute will also be connected, providing personal annotations on the official record.</p> <p>None of this is particularly hard, it&#8217;s just about getting the basics right. Remembering that structure matters and that links can have meaning. It&#8217;s also about recognising that &#8216;crowd sourcing&#8217; or user- generated content can be made anywhere. Using Linked Open Data people can attach meanings to your stuff without visiting your website. Through the process of give and take, creation and consumption, we can build layers of description, elaboration, and significance across the web.</p> <p>What excites me most about open cultural data is not the possibility of shiny new apps or collection visualisations, but the possibility of doing old things better. The possibility of reimagining the humble footnote, for example, as a re-usable container of structured contextual data &#8211; as a form of distributed collection description. The possibility of developing new forms of publication that immerse text and narrative within a rich contextual soup brewed from the holdings of cultural institutions.</p> <p>I want every online book or article to be a portal. I want every blog or social media site to be a collection interface.</p> <p>What might this look like? Perhaps something like this presentation.</p> <p>My slides today are embedded within a HTML document that incorporates all sorts of extra goodies. The full text of my talk is here, and as you scroll through it you&#8217;ll see more information about the people, places and resources I mention pop up in the sidebar. Alternatively you can explore just the people or the resources, looking at the connections between them and the contexts in which they&#8217;re mentioned within my text.</p> <p>This is part of an ongoing interest to explore different ways of presenting historical narrative, that build a relationship between the text and the structured data that underlies the story. </p> <p>All of the structured data is available in machine-readable form as RDF &ndash; it is, in itself, a source of LOD. In fact the interface is built using an assortment of JavaScript libraries that read the RDF into a little temporary triplestore, and then query it to create the different views. So the whole thing is really powered by LOD.</p> <p>It's still very much an experiment, but I think it raises some interesting possibilities for thinking about how we might consume and create LOD simply by doing what we've always done &ndash; telling stories.</p> <p>EJ Brady&#8217;s dreams were never realised. Australia&#8217;s vast spaces remained largely empty, and the poet continued to wrestle with personal and financial disappointment. &#8216;After nearly eight decades association with the man&#8217;, Brady wrote of himself in 1949, &#8216;I have come to look upon him as the most successful failure in literary history&#8217;. This energetic booster of Australia&#8217;s potentialities was well aware of his own life&#8217;s mocking irony. &#8216;He has not… made the wages of a wharf laborer out of book writing yet he persists in asserting Australia is the best country in the world!&#8217;.</p> <p>But still Brady continued to add pins to his map.&#8216;For half a century I&#8217;ve been heaping up notes, reports, clippings, pamphlets, etc. on... all phases of the country&#8217;s life and development&#8217;. &#8216;What in hell I accumulate such stuff for I don&#8217;t know&#8217;, he complained in 1947. As the elderly man surveyed the &#8216;bomb blasted pile of rubbish&#8217; strewn about his writing tent, he admitted that &#8216;this collecting is a sort of mania&#8217;.</p> <p>Brady&#8217;s map and pins told a complex story of hope and disappointment, of confidence and fear. A story that combined national progress with an individual&#8217;s attempts merely to live.</p> <p>There are stories in our data too &#8211; complex and contradictory stories full of emotion and drama, disappointment and achievement, violence and love. Let&#8217;s find ways to tell those stories.</p> </div> <script type="application/json+ld" id="resources-json">{
+      "@context": {
+        "foaf": "http://xmlns.com/foaf/0.1/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      },
+      "@graph": [
+        {
+          "@id": "http://localhost:9000/#!/resources/13",
+          "@type": "schema:CreativeWork",
+          "schema:name": "Australia Unlimited - The hour of action is now!",
+          "schema:provider": {
+            "@id": "http://localhost:9000/#!/organisations/national_archives_of_australia"
+          },
+          "schema:url": {
+            "@id": "http://dhistory.org/archives/naa/items/1891873/208/"
+          }
+        },
+        {
+          "@id": "_:f7f65b66422214217945100b419c2ca97b1",
+          "@type": "schema:Organization",
+          "schema:name": "George Robertson & Co"
+        },
+        {
+          "@id": "http://localhost:9000/#!/resources/0",
+          "@type": "schema:CreativeWork",
+          "schema:creator": {
+            "@id": "http://localhost:9000/#!/people/edwin_james_brady"
+          },
+          "schema:dateCreated": {
+            "@type": "xsd:date",
+            "@value": "1918-01-01"
+          },
+          "schema:name": "Australia Unlimited",
+          "schema:url": {
+            "@id": "http://www.archive.org/details/australiaunlimit00bradrich"
+          }
+        },
+        {
+          "@id": "http://localhost:9000/#!/resources/5",
+          "@type": "schema:CreativeWork",
+          "schema:creator": {
+            "@id": "http://localhost:9000/#!/people/florence_brady"
+          },
+          "schema:dateCreated": {
+            "@type": "xsd:date",
+            "@value": "1951-01-01"
+          },
+          "schema:mentions": {
+            "@id": "http://localhost:9000/#!/people/edwin_james_brady"
+          },
+          "schema:name": "Rear view, Brady's home overlooking Mallacoota out to the sea, New South Wales",
+          "schema:provider": {
+            "@id": "http://localhost:9000/#!/organisations/national_library_of_australia"
+          },
+          "schema:url": {
+            "@id": "http://nla.gov.au/nla.pic-an2291548"
+          }
+        },
+        {
+          "@id": "http://localhost:9000/#!/resources/8",
+          "@type": "schema:CreativeWork",
+          "schema:dateCreated": {
+            "@type": "xsd:date",
+            "@value": "1912-04-29"
+          },
+          "schema:name": "MR. E. J. BRADY'S MISSION",
+          "schema:thumbnailUrl": {
+            "@id": "http://localhost:9000/images/trove-brady-barrier-miner.png"
+          },
+          "schema:url": {
+            "@id": "http://nla.gov.au/nla.news-article45191923"
+          }
+        },
+        {
+          "@id": "http://localhost:9000/#!/resources/9",
+          "@type": "schema:CreativeWork",
+          "schema:dateCreated": {
+            "@type": "xsd:date",
+            "@value": "1913-01-01"
+          },
+          "schema:name": "Australia Unlimited - Visit to Cairns of Mr Brady",
+          "schema:thumbnailUrl": {
+            "@id": "http://localhost:9000/images/trove-brady-cairns.png"
+          },
+          "schema:url": {
+            "@id": "http://nla.gov.au/nla.news-article39941034"
+          }
+        },
+        {
+          "@id": "http://localhost:9000/#!/resources/11",
+          "@type": "schema:CreativeWork",
+          "schema:name": "Sensational book offer",
+          "schema:provider": {
+            "@id": "http://localhost:9000/#!/organisations/national_archives_of_australia"
+          },
+          "schema:url": {
+            "@id": "http://dhistory.org/archives/naa/items/1891873/135/"
+          }
+        },
+        {
+          "@id": "http://localhost:9000/#!/resources/10",
+          "@type": "schema:CreativeWork",
+          "schema:dateCreated": {
+            "@type": "xsd:date",
+            "@value": "7/23/1952"
+          },
+          "schema:name": "Genial Giant Was Bush And Sea Balladist",
+          "schema:thumbnailUrl": {
+            "@id": "http://localhost:9000/images/trove-brady-death.png"
+          },
+          "schema:url": {
+            "@id": "http://nla.gov.au/nla.news-article18274372"
+          }
+        },
+        {
+          "@id": "http://localhost:9000/#!/resources/1",
+          "@type": "schema:CreativeWork",
+          "schema:creator": {
+            "@id": "http://localhost:9000/#!/people/edwin_james_brady"
+          },
+          "schema:dateCreated": {
+            "@type": "xsd:date",
+            "@value": "1911-01-01"
+          },
+          "schema:name": "River Rovers",
+          "schema:publisher": {
+            "@id": "_:f7f65b66422214217945100b419c2ca97b1"
+          },
+          "schema:url": {
+            "@id": "http://archive.org/details/riverrovers00brad"
+          }
+        },
+        {
+          "@id": "http://localhost:9000/#!/resources/12",
+          "@type": "schema:CreativeWork",
+          "schema:name": "What the world thinks about Australia Unlimited",
+          "schema:provider": {
+            "@id": "http://localhost:9000/#!/organisations/national_archives_of_australia"
+          },
+          "schema:url": {
+            "@id": "http://dhistory.org/archives/naa/items/1891873/55/"
+          }
+        },
+        {
+          "@id": "http://localhost:9000/#!/resources/3",
+          "@type": "schema:CreativeWork",
+          "schema:about": {
+            "@id": "http://localhost:9000/#!/people/edwin_james_brady"
+          },
+          "schema:creator": {
+            "@id": "http://localhost:9000/#!/people/fred_monteath"
+          },
+          "schema:dateCreated": {
+            "@type": "xsd:date",
+            "@value": "1899-01-01"
+          },
+          "schema:name": "Portrait of Edwin James Brady",
+          "schema:provider": {
+            "@id": "http://localhost:9000/#!/organisations/national_library_of_australia"
+          },
+          "schema:thumbnailUrl": {
+            "@id": "http://localhost:9000/images/nla.pic-vn3704359-v.jpg"
+          },
+          "schema:url": {
+            "@id": "http://nla.gov.au/nla.pic-vn3704359"
+          }
+        },
+        {
+          "@id": "http://localhost:9000/#!/resources/4",
+          "@type": "schema:CreativeWork",
+          "schema:creator": {
+            "@id": "http://localhost:9000/#!/people/florence_brady"
+          },
+          "schema:dateCreated": {
+            "@type": "xsd:date",
+            "@value": "1951-01-01"
+          },
+          "schema:mentions": {
+            "@id": "http://localhost:9000/#!/people/edwin_james_brady"
+          },
+          "schema:name": "Front view, Edwin J. Brady's home at Mallacoota, New South Wales, 1951",
+          "schema:provider": {
+            "@id": "http://localhost:9000/#!/organisations/national_library_of_australia"
+          },
+          "schema:url": {
+            "@id": "http://nla.gov.au/nla.pic-an2287718"
+          }
+        },
+        {
+          "@id": "http://localhost:9000/#!/resources/2",
+          "@type": "schema:CreativeWork",
+          "schema:about": {
+            "@id": "http://localhost:9000/#!/people/edwin_james_brady"
+          },
+          "schema:dateCreated": {
+            "@type": "xsd:date",
+            "@value": "1899-01-01"
+          },
+          "schema:name": "Portrait of Edwin James Brady, ca. 1899",
+          "schema:provider": {
+            "@id": "http://localhost:9000/#!/organisations/national_library_of_australia"
+          },
+          "schema:url": {
+            "@id": "http://nla.gov.au/nla.pic-vn4582363"
+          }
+        },
+        {
+          "@id": "http://localhost:9000/#!/resources/6",
+          "@type": "schema:CreativeWork",
+          "schema:name": "Area of the Commonwealth of Australia compared with that of Europe",
+          "schema:provider": {
+            "@id": "http://localhost:9000/#!/organisations/state_library_of_victoria"
+          },
+          "schema:thumbnailUrl": {
+            "@id": "http://localhost:9000/images/australia_europe.jpg"
+          },
+          "schema:url": {
+            "@id": "http://handle.slv.vic.gov.au/10381/78925"
+          }
+        },
+        {
+          "@id": "http://localhost:9000/#!/resources/7",
+          "@type": "schema:CreativeWork",
+          "schema:about": {
+            "@id": "http://localhost:9000/#!/people/edwin_james_brady"
+          },
+          "schema:name": "Portrait of E.J. Brady",
+          "schema:provider": {
+            "@id": "http://localhost:9000/#!/organisations/university_of_melbourne_archives"
+          },
+          "schema:url": {
+            "@id": "http://app1.lib.unimelb.edu.au/cgi-bin/mua-search?tdetails=6993;imgdetails=6993"
+          }
+        }
+      ]
+    }</script> <script type="application/json+ld" id="people-json">{
+      "@context": {
+        "foaf": "http://xmlns.com/foaf/0.1/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      },
+      "@graph": [
+        {
+          "@id": "_:f0063fa56f6c84dcb8cb5aedde606fd49b2",
+          "@type": "schema:Place",
+          "schema:name": "Mallacoota, Victoria, Australia"
+        },
+        {
+          "@id": "_:f0063fa56f6c84dcb8cb5aedde606fd49b1",
+          "@type": "schema:Place",
+          "schema:name": "Carcoar, New South Wales, Australia"
+        },
+        {
+          "@id": "http://localhost:9000/#!/people/fred_monteath",
+          "@type": "schema:Person",
+          "schema:name": "Fred Monteath",
+          "schema:url": [
+            {
+              "@id": "http://viaf.org/viaf/91506445"
+            },
+            {
+              "@id": "http://nla.gov.au/nla.party-473319"
+            }
+          ]
+        },
+        {
+          "@id": "http://localhost:9000/#!/people/florence_brady",
+          "@type": "schema:Person",
+          "schema:name": "Florence Brady",
+          "schema:url": [
+            {
+              "@id": "http://viaf.org/viaf/94779437"
+            },
+            {
+              "@id": "http://nla.gov.au/nla.party-631518"
+            }
+          ]
+        },
+        {
+          "@id": "http://localhost:9000/#!/people/edwin_james_brady",
+          "@type": "schema:Person",
+          "schema:birthDate": {
+            "@type": "xsd:date",
+            "@value": "1869-08-07"
+          },
+          "schema:birthPlace": {
+            "@id": "_:f0063fa56f6c84dcb8cb5aedde606fd49b1"
+          },
+          "schema:deathDate": {
+            "@type": "xsd:date",
+            "@value": "1952-08-22"
+          },
+          "schema:deathPlace": {
+            "@id": "_:f0063fa56f6c84dcb8cb5aedde606fd49b2"
+          },
+          "schema:name": "Edwin James Brady",
+          "schema:url": [
+            {
+              "@id": "http://nla.gov.au/nla.party-630490"
+            },
+            {
+              "@id": "http://viaf.org/viaf/5294686"
+            }
+          ]
+        }
+      ]
+    }</script> <!--[if lt IE 9]>
+    <script src="scripts/oldieshim.76f279db.js"></script>
+    <![endif]--> <script src="scripts/vendor.3efe47a8.js"></script> <script src="scripts/scripts.9f89d8ff.js"></script>  

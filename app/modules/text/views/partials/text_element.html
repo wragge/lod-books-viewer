@@ -1,0 +1,1 @@
+<p ng-if="element.type=='p'" id="para-{{ element.id }}" in-view="paraInView($index, $inview, $inviewpart, $event)" in-view-options="{ debounce: 500 }" ng-bind-html="element.content" ng-class="{'active-para': element.id == activePara}"></p>
