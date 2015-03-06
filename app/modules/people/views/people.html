@@ -4,7 +4,7 @@
             <h2 class="page-header">People</h2>
             <ul class="media-list">
                 <li class="media" ng-repeat="person in people">
-                    <a class="media-left thumbnail small-img" href="{{ person['@id'] }}">
+                    <a class="media-left thumbnail small-img" href="{{ person['@id'] | localiseUrl }}">
                         <img ng-src="{{ person.schema_thumbnailUrl['@id'] }}">
                     </a>
                     <div class="media-body">

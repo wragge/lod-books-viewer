@@ -34,5 +34,5 @@ app.controller('PersonCtrl', ['$scope', '$routeParams', 'DataFactory', 'TextFact
     $scope.mentionsOf = DataFactory.getMentionsOf(personId);
     $scope.creatorOf = DataFactory.getCreatorOf(personId);
     $scope.referencesTo = TextFactory.getReferencesTo(personId);
-    console.log($scope.referencesTo);
+    console.log($scope.subjectOf);
   }]);

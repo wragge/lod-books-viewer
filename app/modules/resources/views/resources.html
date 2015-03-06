@@ -4,7 +4,7 @@
             <h2 class="page-header">Resources</h2>
             <ul class="media-list">
                 <li class="media" ng-repeat="resource in resources">
-                    <a class="media-left thumbnail small-img" href="{{ resource['@id'] }}">
+                    <a class="media-left thumbnail small-img" href="{{ resource['@id'] | localiseUrl }}">
                         <img ng-src="{{ resource.schema_thumbnailUrl['@id'] }}">
                     </a>
                     <div class="media-body">

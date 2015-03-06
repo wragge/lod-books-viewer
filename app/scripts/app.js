@@ -4,11 +4,13 @@
 var app = angular.module('lodBook', [
   'ngSanitize',
   'ngRoute',
+  'ngAnimate',
   'duScroll',
   'mgcrea.ngStrap',
   'lodBook.text',
   'lodBook.people',
-  'lodBook.resources'
+  'lodBook.resources',
+  'lodBook.filters'
 ]);
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
@@ -43,28 +45,29 @@ app.factory('DataFactory', function($document, $filter) {
     var resourcesJson = angular.element('#resources-json')[0];
     allData = allData.concat(JSON.parse(resourcesJson.innerHTML)['@graph']);
     allData = replaceColons(allData);
+    console.log(allData);
 
     dataFactory.getItem = function(itemId) {
         var items = $filter('filter')(allData, {'@id': itemId});
-        console.log(items);
+        console.log(itemId);
         return items[0];
       };
 
     dataFactory.getSubjectOf = function(itemId) {
         //Return all resources that are about the supplied item
-        var items = $filter('filter')(allData, {'schema_about': itemId});
+        var items = $filter('searchJSONLD')(allData, {'schema_about': itemId});
         return items;
       };
 
     dataFactory.getMentionsOf = function(itemId) {
         //Return all resources that mention the supplied item
-        var items = $filter('filter')(allData, {'schema_mentions': itemId});
+        var items = $filter('searchJSONLD')(allData, {'schema_mentions': itemId});
         return items;
       };
 
     dataFactory.getCreatorOf = function(itemId) {
         //Return all resources that are created by the supplied entity
-        var items = $filter('filter')(allData, {'schema_creator': itemId});
+        var items = $filter('searchJSONLD')(allData, {'schema_creator': itemId});
         return items;
       };
 

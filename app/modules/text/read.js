@@ -37,6 +37,7 @@ app.controller('ReadParaCtrl', ['$rootScope', '$scope', '$routeParams', '$locati
     $scope.currentParas = {};
     $scope.activePara = '';
     $scope.activeParaId = '';
+    $scope.currentLinks = [];
     $scope.wordsTotal = TextFactory.getWords();
     $scope.text = TextFactory.getText();
     $scope.gotoPara = function() {
@@ -52,13 +53,14 @@ app.controller('ReadParaCtrl', ['$rootScope', '$scope', '$routeParams', '$locati
         var offset = 100000;
         var activePara = '';
         var activeParaId = '';
-        var currentLinks = [];
+        $scope.currentLinks = [];
         angular.forEach($scope.currentParas, function(para, paraId) {
             var links = TextFactory.getLinks(paraId);
+            console.log(links);
             angular.forEach(links, function(link) {
-              var person = DataFactory.getItem(link);
-              if (typeof(person) !== 'undefined' && currentLinks.indexOf(person) === -1) {
-                currentLinks.push(person);
+              var person = DataFactory.getItem(link.link);
+              if (typeof(person) !== 'undefined' && $scope.currentLinks.indexOf(person) === -1) {
+                $scope.currentLinks.push(person);
               }
             });
             if (para.part === 'top' || para.part === 'both') {
@@ -69,10 +71,9 @@ app.controller('ReadParaCtrl', ['$rootScope', '$scope', '$routeParams', '$locati
               }
             }
           });
-        console.log(activeParaId);
         $scope.activePara = activePara;
         $scope.activeParaId = activeParaId;
-        $scope.currentLinks = currentLinks;
+        //$scope.currentLinks = currentLinks;
         $scope.paraCount = TextFactory.getParaCount();
         $scope.paraNumbers = TextFactory.getParaNumbers();
         $scope.gotoParaId = $scope.paraNumbers[activeParaId-1];

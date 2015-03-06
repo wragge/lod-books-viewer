@@ -29,3 +29,32 @@ body { font-family: 'Lora', serif; margin-bottom: 1000px; margin-top: 50px;}
   object-fit: cover;
   overflow: hidden;
 } 
+
+.my-repeat-animation.ng-enter, 
+.my-repeat-animation.ng-leave, 
+.my-repeat-animation.ng-move {
+  -webkit-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+  position:relative;
+}
+
+.my-repeat-animation.ng-enter {
+  opacity:0;
+}
+.my-repeat-animation.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+.my-repeat-animation.ng-leave {
+  opacity:1;
+}
+.my-repeat-animation.ng-leave.ng-leave-active {
+  opacity:0;
+}
+
+.my-repeat-animation.ng-move {
+  opacity:0.5;
+}
+.my-repeat-animation.ng-move.ng-move-active {
+  opacity:1;
+}
