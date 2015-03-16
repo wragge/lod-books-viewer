@@ -20,6 +20,13 @@ app.controller('ResourcesCtrl', ['$scope', '$filter', 'DataFactory', function($s
   }]);
 
 app.controller('ResourceCtrl', ['$scope', '$routeParams', '$filter', 'DataFactory', function($scope, $routeParams, $filter, DataFactory) {
-    var resourceId = $routeParams.resourceId;
-    $scope.resource = DataFactory.getItem('/resources/' + resourceId);
+    var resourceId = '/resources/' + $routeParams.resourceId;
+    var resource = DataFactory.getItem(resourceId);
+    $scope.resource = resource;
+    $scope.subjects = DataFactory.getRelation(resourceId, 'subjectOf');
+    $scope.mentions = DataFactory.getRelation(resourceId, 'mentionedBy');
+    $scope.publisher = DataFactory.getRelation(resourceId, 'publishes');
+    $scope.provider = DataFactory.getRelation(resourceId, 'provides');
+    $scope.hasParts = DataFactory.getRelation(resourceId, 'isPartOf');
+    $scope.isPartOf = DataFactory.getRelation(resourceId, 'hasPart');
   }]);

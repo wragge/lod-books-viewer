@@ -18,21 +18,34 @@ app.controller('PeopleCtrl', ['$scope', 'DataFactory', function($scope, DataFact
   }]);
 
 app.controller('PersonCtrl', ['$scope', '$routeParams', 'DataFactory', 'TextFactory', function($scope, $routeParams, DataFactory, TextFactory) {
-    var getRandom = function(min, max) {
-        return Math.floor(Math.random()*(max-min+1)+min);
-      };
-    var personId = $routeParams.personId;
-    $scope.person = DataFactory.getItem(personId);
-    var resources = DataFactory.getImages(personId);
-    if (resources.length > 1) {
-      var index = getRandom(0, resources.length-1);
-      $scope.imageObject = resources[index];
-    } else if (resources.length === 1) {
-      $scope.imageObject = resources[0];
-    }
-    $scope.subjectOf = DataFactory.getSubjectOf(personId);
-    $scope.mentionsOf = DataFactory.getMentionsOf(personId);
-    $scope.creatorOf = DataFactory.getCreatorOf(personId);
-    $scope.referencesTo = TextFactory.getReferencesTo(personId);
-    console.log($scope.subjectOf);
+    var personId = 'people/' + $routeParams.personId;
+    var person = DataFactory.getItem(personId);
+    $scope.person = person;
+    $scope.subjectOf = DataFactory.getRelation(personId, 'about');
+    $scope.mentionsOf = DataFactory.getRelation(personId, 'mentions');
+    $scope.creatorOf = DataFactory.getRelation(personId, 'creator');
+    $scope.knows = DataFactory.getRelation(personId, 'knows');
+    $scope.spouses = DataFactory.getRelation(personId, 'spouse');
+    $scope.children = DataFactory.getRelation(personId, 'parent');
+    $scope.parents = DataFactory.getRelation(personId, 'children');
+    $scope.siblings = DataFactory.getRelation(personId, 'sibling');
+    $scope.relatedTo = DataFactory.getRelation(personId, 'relatedTo');
+    $scope.memberOf = DataFactory.getRelation(personId, 'member');
+    $scope.employeeOf = DataFactory.getRelation(personId, 'employee');
+    //$scope.relatedTo = DataFactory.getRelatedTo(personId);
+    console.log($scope.person);
+    $scope.birthPlace = function() {
+      var birthPlace = null;
+      if (person.birthPlace) {
+        birthPlace = DataFactory.getItem(person.birthPlace['@id']);
+      }
+      return birthPlace;
+    };
+    $scope.deathPlace = function() {
+      var deathPlace = null;
+      if (person.deathPlace) {
+        deathPlace = DataFactory.getItem(person.deathPlace['@id']);
+      }
+      return deathPlace;
+    };
   }]);

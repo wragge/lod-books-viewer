@@ -3,13 +3,11 @@
 body { font-family: 'Lora', serif; margin-bottom: 1000px; margin-top: 50px;}
 
 
-
 .read p { color: #555; font-size: 150%; margin-bottom: 20px; padding-left: 10px;}
 
 .read p.first { height: 100px; overflow: hidden; position: relative; }
 .first-text { position: absolute; bottom: 0;}
-.muted {opacity: 0.4;}
-
+.muted {opacity: 0.2;}
 
 .sidebar-fixed {
   position: fixed;
@@ -18,43 +16,105 @@ body { font-family: 'Lora', serif; margin-bottom: 1000px; margin-top: 50px;}
 
 .read .active-para { color: #000; border-left: 1px solid #555; padding-left: 9px;}
 
-.small-img { padding: 4px; width: 100px;
-  height: 100px;}
+.small-img { padding: 4px; 
+  width: 80px;
+  height: 80px;
+  text-align: center;}
 
 .media-body { padding: 10px;}
 
-.small-img img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  overflow: hidden;
-} 
+a.place {
+  color: #fff;
+  background-color: #1D9879;
+}
 
-.my-repeat-animation.ng-enter, 
-.my-repeat-animation.ng-leave, 
-.my-repeat-animation.ng-move {
+a.resource {
+  color: #fff;
+  background-color: #CE602B;
+}
+
+a.people {
+  color: #fff;
+  background-color: #B9D581;
+}
+
+a.event {
+  color: #fff;
+  background-color: #D9D347;
+}
+
+.timeline-badge.info {
+  background-color: #D9D347 !important;
+}
+
+a.thumbnail.event:hover,
+a.thumbnail.event:focus,
+a.thumbnail.event.active {
+  border-color: #D9D347;
+}
+
+a.thumbnail.place:hover,
+a.thumbnail.place:focus,
+a.thumbnail.place.active {
+  border-color: #1D9879;
+}
+
+a.thumbnail.people:hover,
+a.thumbnail.people:focus,
+a.thumbnail.people.active {
+  border-color: #B9D581;
+}
+
+a.thumbnail.resource:hover,
+a.thumbnail.resource:focus,
+a.thumbnail.resource.active {
+  border-color: #CE602B;
+}
+
+.jumbotron { background-image: url('/images/jumbo.jpg'); background-attachment: fixed;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  position: relative;}
+
+.jumbotron small { padding-left: 100px;}
+
+.resources-links .panel-heading {
+  background-color: #CE602B;
+}
+
+.people-links .panel-heading {
+  background-color: #B9D581;
+}
+
+.animate-show {
+  opacity: 1;
+}
+
+.animate-show.ng-hide-add.ng-hide-add-active,
+.animate-show.ng-hide-remove.ng-hide-remove-active {
   -webkit-transition: 0.5s linear all;
   transition: 0.5s linear all;
-  position:relative;
 }
 
-.my-repeat-animation.ng-enter {
+.animate-show.ng-hide {
+  opacity: 0;
+}
+
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
   opacity:0;
 }
-.my-repeat-animation.ng-enter.ng-enter-active {
-  opacity:1;
-}
 
-.my-repeat-animation.ng-leave {
-  opacity:1;
-}
-.my-repeat-animation.ng-leave.ng-leave-active {
-  opacity:0;
-}
-
-.my-repeat-animation.ng-move {
-  opacity:0.5;
-}
-.my-repeat-animation.ng-move.ng-move-active {
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
   opacity:1;
 }

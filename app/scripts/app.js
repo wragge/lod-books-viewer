@@ -7,9 +7,15 @@ var app = angular.module('lodBook', [
   'ngAnimate',
   'duScroll',
   'mgcrea.ngStrap',
+  'ui.bootstrap',
+  'angular-parallax',
+  'picardy.fontawesome',
   'lodBook.text',
   'lodBook.people',
   'lodBook.resources',
+  'lodBook.places',
+  'lodBook.events',
+  'lodBook.organisations',
   'lodBook.filters'
 ]);
 
@@ -40,49 +46,68 @@ app.factory('DataFactory', function($document, $filter) {
     console.log('Running DataFactory...');
     var allData = [];
     var dataFactory = {};
-    var peopleJson = angular.element('#people-json')[0];
-    allData = allData.concat(JSON.parse(peopleJson.innerHTML)['@graph']);
-    var resourcesJson = angular.element('#resources-json')[0];
-    allData = allData.concat(JSON.parse(resourcesJson.innerHTML)['@graph']);
+    //var peopleJson = angular.element('#people-json')[0];
+    //allData = allData.concat(JSON.parse(peopleJson.innerHTML)['@graph']);
+    //var resourcesJson = angular.element('#resources-json')[0];
+    var dataJson = angular.element('#data-json')[0];
+    allData = JSON.parse(dataJson.innerHTML)['@graph'];
     allData = replaceColons(allData);
     console.log(allData);
 
     dataFactory.getItem = function(itemId) {
         var items = $filter('filter')(allData, {'@id': itemId});
-        console.log(itemId);
+        console.log(items[0]);
         return items[0];
       };
 
     dataFactory.getSubjectOf = function(itemId) {
         //Return all resources that are about the supplied item
-        var items = $filter('searchJSONLD')(allData, {'schema_about': itemId});
+        var items = $filter('searchJSONLD')(allData, {'about': itemId});
         return items;
       };
 
     dataFactory.getMentionsOf = function(itemId) {
         //Return all resources that mention the supplied item
-        var items = $filter('searchJSONLD')(allData, {'schema_mentions': itemId});
+        var items = $filter('searchJSONLD')(allData, {'mentions': itemId});
+        return items;
+      };
+
+    dataFactory.getRelation = function(itemId, relation) {
+        //Return all resources that mention the supplied item
+        var filter = {};
+        filter[relation] = itemId;
+        var items = $filter('searchJSONLD')(allData, filter);
         return items;
       };
 
     dataFactory.getCreatorOf = function(itemId) {
         //Return all resources that are created by the supplied entity
-        var items = $filter('searchJSONLD')(allData, {'schema_creator': itemId});
+        var items = $filter('searchJSONLD')(allData, {'creator': itemId});
         return items;
       };
 
     dataFactory.getPeople = function() {
-        var people = $filter('filter')(allData, {'@type': 'schema:Person'});
+        var people = $filter('filter')(allData, {'@id': '/people/'});
         return people;
       };
 
+    dataFactory.getOrganisations = function() {
+        var organisations = $filter('filter')(allData, {'@id': '/organisations/'});
+        return organisations;
+      };
+
     dataFactory.getResources = function() {
-        var resources = $filter('filter')(allData, {'@type': 'schema:CreativeWork'});
+        var resources = $filter('filter')(allData, {'@id': '/resources/'});
         return resources;
       };
 
+    dataFactory.getPlaces = function() {
+        var places = $filter('filter')(allData, {'@id': '/places/'});
+        return places;
+      };
+
     dataFactory.getImages = function(itemId) {
-        var resources = $filter('filter')(allData, {'@type': 'schema:CreativeWork', 'schema_about': itemId, 'schema_thumbnailUrl': ''});
+        var resources = $filter('filter')(allData, {'@type': 'CreativeWork', 'about': itemId, 'thumbnailUrl': ''});
         return resources;
       };
 
@@ -105,7 +130,7 @@ app.factory('TextFactory', function($document, $filter) {
     var parent = 0;
     var wordsTotal = 0;
     //Load text from page into array
-    angular.forEach(angular.element('[property="rdfs:label"]', angular.element('#content')), function(link) {
+    angular.forEach(angular.element('[property="name"]', angular.element('#content')), function(link) {
         var label = angular.element(link).text();
         var aboutId = angular.element(link).attr('about');
         links[label] = aboutId;
@@ -248,4 +273,19 @@ app.controller('AppCtrl', ['$scope', '$location', 'TextFactory', function($scope
         var active = path.exec($location.path());
         return active;
       };
+    $scope.checkClass = function(id) {
+      var thisClass;
+      if (id.indexOf('/people/') !== -1) {
+        thisClass = 'people';
+      } else if (id.indexOf('/organisations/') !== -1) {
+        thisClass = 'people';
+      } else if (id.indexOf('/resources/') !== -1) {
+        thisClass = 'resource';
+      } else if (id.indexOf('/events/') !== -1) {
+        thisClass = 'event';
+      } else if (id.indexOf('/places/') !== -1) {
+        thisClass = 'place';
+      }
+      return thisClass;
+    };
   }]);

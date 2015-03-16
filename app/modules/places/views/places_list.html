@@ -1,0 +1,24 @@
+    <div class="container">
+        <div class="row>">
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print" role="complementary" data-offset-top="-140" bs-affix>
+                    <input ng-model="query"> <fa name="search"></fa>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h2 class="page-header">Places</h2>
+                <ul class="media-list">
+                    <li class="media" ng-repeat="place in places | filter:query">
+                        <a class="media-left thumbnail small-img place" href="{{ place['@id'] | localiseUrl }}">
+                            <img class="img-responsive" ng-if="place.image" ng-src="{{ place.image }}">
+                            <fa ng-if="!place.image" name="map-marker" size="5" aria-hidden="true"></fa>
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading"><a href="{{ place['@id'] | localiseUrl }}" class="">{{ place.name }}</a></h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>

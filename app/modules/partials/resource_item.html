@@ -1,0 +1,10 @@
+<div class="media-left">
+    <a class="thumbnail small-img resource" href="{{ item['@id'] | localiseUrl }}">
+        <img class="img-responsive" ng-if="item.thumbnailUrl" ng-src="{{ item.thumbnailUrl }}">
+        <fa ng-if="!item.thumbnailUrl" name="photo" size="5" aria-hidden="true"></fa>
+    </a>
+</div>
+<div class="media-body">
+    <h4 class="media-heading"><a href="{{ item['@id'] | localiseUrl }}" class="">{{ item.name }}</a></h4>
+    <p>{{ item['@type'] }}</p>
+</div>

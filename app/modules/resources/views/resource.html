@@ -1,3 +1,153 @@
-<div class="container-fluid">
-    <h2>{{ resource.schema_name }}</h2>
-</div>
+    <div class="row>">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <h2 class="page-header">{{ resource.name }}</h2>
+            <div class="row">
+                <div class="col-md-8">
+                <dl class="dl-horizontal">
+                    <dt ng-if="resource['@type']">
+                        Type
+                    </dt>
+                    <dd ng-if="resource.url">
+                        {{ resource['@type'] }}
+                    </dd>
+                    <dt ng-if="resource.creationDate">
+                        Date created
+                    </dt>
+                    <dd ng-if="resource.creationDate">
+                        {{ resource.creationDate | dateFormat }}
+                    </dd>
+                    <dt ng-if="resource.publicationDate">
+                        Date published
+                    </dt>
+                    <dd ng-if="resource.publicationDate">
+                        {{ resource.publicationDate | dateFormat }}
+                    </dd>
+                    <dt ng-if="resource.startDate">
+                        Start date
+                    </dt>
+                    <dd ng-if="resource.startDate">
+                        {{ resource.startDate | dateFormat }}
+                    </dd>
+                    <dt ng-if="resource.endDate">
+                        End date
+                    </dt>
+                    <dd ng-if="resource.endDate">
+                        {{ resource.endDate | dateFormat }}
+                    </dd>
+                    <dt ng-if="resource.url">
+                        URL
+                    </dt>
+                    <dd ng-if="resource.url" ng-bind-html="resource.url | linky">
+                    </dd>
+                    <dt ng-if="publisher.length">
+                        Publisher
+                    </dt>
+                    <dd ng-if="publisher.length">
+                        <ul class="list-unstyled">
+                            <li ng-repeat="link in publisher | listify"><a href="{{ link['@id'] | localiseUrl }}">{{ link.name }}</a></li>
+                        </ul>
+                    </dd>
+                    <dt ng-if="provider.length">
+                        Provider
+                    </dt>
+                    <dd ng-if="provider.length">
+                        <ul class="list-unstyled">
+                            <li ng-repeat="link in provider | listify"><a href="{{ link['@id'] | localiseUrl }}">{{ link.name }}</a></li>
+                        </ul>
+                    </dd>
+                    <dt ng-if="resource.sameAs">
+                        See also
+                    </dt>
+                    <dd ng-if="resource.sameAs">
+                        <ul class="list-unstyled">
+                            <li ng-repeat="link in resource.sameAs | listify"><a href="{{ link['@id'] }}">{{ link['@id'] | labelIdentifier }}</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                </div>
+                <div class="col-md-4">
+                    <img class="img-responsive img-thumbnail" ng-src="{{ resource.image }}">
+                </div>
+            </div>
+            <div ng-if="subjects.length">
+                <h3>Subjects</h3>
+                <ul class="media-list">
+                    <li class="media" ng-include="'modules/partials/person_item.html'" ng-repeat="item in subjects">
+                    </li>
+                </ul>
+            </div>
+            <div ng-if="parents.length">
+                <h3>Parents</h3>
+                <ul class="media-list">
+                    <li class="media" ng-include="'modules/partials/person_item.html'" ng-repeat="item in parents">
+                    </li>
+                </ul>
+            </div>
+            <div ng-if="spouses.length">
+                <h3>Children</h3>
+                <ul class="media-list">
+                    <li class="media" ng-include="'modules/partials/person_item.html'" ng-repeat="item in children">
+                    </li>
+                </ul>
+            </div>
+            <div ng-if="siblings.length">
+                <h3>Siblings</h3>
+                <ul class="media-list">
+                    <li class="media" ng-include="'modules/partials/person_item.html'" ng-repeat="item in siblings">
+                    </li>
+                </ul>
+            </div>
+            <div ng-if="relatedTo.length">
+                <h3>Related to</h3>
+                <ul class="media-list">
+                    <li class="media" ng-include="'modules/partials/person_item.html'" ng-repeat="item in relatedTo">
+                    </li>
+                </ul>
+            </div>
+            <div ng-if="knows.length">
+                <h3>Knows</h3>
+                <ul class="media-list">
+                    <li class="media" ng-include="'modules/partials/person_item.html'" ng-repeat="item in knows">
+                    </li>
+                </ul>
+            </div>
+            <div ng-if="memberOf.length">
+                <h3>Member of</h3>
+                <ul class="media-list">
+                    <li class="media" ng-include="'modules/partials/person_item.html'" ng-repeat="item in memberOf">
+                    </li>
+                </ul>
+            </div>
+            <div ng-if="employeeOf.length">
+                <h3>Employee of</h3>
+                <ul class="media-list">
+                    <li class="media" ng-include="'modules/partials/person_item.html'" ng-repeat="item in employeeOf">
+                    </li>
+                </ul>
+            </div>
+            <div ng-if="creatorOf.length">
+                <h3>Creator of</h3>
+                <ul class="media-list">
+                    <li class="media" ng-include="'modules/partials/resource_item.html'" ng-repeat="item in creatorOf">
+                    </li>
+                </ul>
+            </div>
+            <div ng-if="subjectOf.length">
+                <h3>Subject of</h3>
+                <ul class="media-list">
+                    <li class="media" ng-include="'modules/partials/resource_item.html'" ng-repeat="item in subjectOf">
+                    </li>
+                </ul>
+            </div>
+            <div ng-if="mentionedBy.length">
+                <h3>Mentioned by</h3>
+                <ul class="media-list">
+                    <li class="media" ng-include="'modules/partials/resource_item.html'" ng-repeat="item in mentionedBy">
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="col-md-3"></div>
+    </div>
