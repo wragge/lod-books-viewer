@@ -12,14 +12,14 @@ app.config(['$routeProvider', function($routeProvider) {
     controller: 'EventsCtrl'
   });
   $routeProvider.when('/events/:eventId', {
-    templateUrl: 'modules/events/views/organisation.html',
+    templateUrl: 'modules/events/views/event.html',
     controller: 'EventCtrl'
   });
 }]);
 
 app.controller('EventsCtrl', ['$scope', '$filter', 'DataFactory', function($scope, $filter, DataFactory) {
     //var events = DataFactory.getEvents();
-    var events = [];
+    var events = DataFactory.getEvents();
     var people = DataFactory.getPeople();
     var born = $filter('filter')(people, {'birthDate': '1'});
     var died = $filter('filter')(people, {'deathDate': '1'});
@@ -42,11 +42,19 @@ app.controller('EventsCtrl', ['$scope', '$filter', 'DataFactory', function($scop
   }]);
 
 app.controller('EventCtrl', ['$scope', '$routeParams', 'DataFactory', 'TextFactory', function($scope, $routeParams, DataFactory, TextFactory) {
-    var eventId = 'events/' + $routeParams.eventId;
-    $scope.event = DataFactory.getItem(eventId);
-    $scope.subjectOf = DataFactory.getSubjectOf(eventId);
-    $scope.mentionsOf = DataFactory.getMentionsOf(eventId);
-    $scope.creatorOf = DataFactory.getCreatorOf(eventId);
+    var eventId = 'events/' + $routeParams.eventId + '/';
+    var event = DataFactory.getItem(eventId);
+    $scope.event = event;
+    $scope.performers = DataFactory.getRelation(eventId, 'performedIn');
+    $scope.attendees = DataFactory.getRelation(eventId, 'attended');
+    console.log($scope.performers);
+    $scope.location = function() {
+      var location = null;
+      if (event.location) {
+        location = DataFactory.getItem(event.location['@id']);
+      }
+      return location;
+    };
   }]);
 
 app.filter('timeline', function() {

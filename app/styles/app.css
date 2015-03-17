@@ -38,6 +38,11 @@ a.people {
   background-color: #B9D581;
 }
 
+a.organisation {
+  color: #fff;
+  background-color: #B9D581;
+}
+
 a.event {
   color: #fff;
   background-color: #D9D347;
@@ -65,6 +70,12 @@ a.thumbnail.people.active {
   border-color: #B9D581;
 }
 
+a.thumbnail.organisation:hover,
+a.thumbnail.organisation:focus,
+a.thumbnail.organisation.active {
+  border-color: #B9D581;
+}
+
 a.thumbnail.resource:hover,
 a.thumbnail.resource:focus,
 a.thumbnail.resource.active {
@@ -84,6 +95,18 @@ a.thumbnail.resource.active {
 
 .people-links .panel-heading {
   background-color: #B9D581;
+}
+
+.organisations-links .panel-heading {
+  background-color: #B9D581;
+}
+
+.places-links .panel-heading {
+  background-color: #1D9879;
+}
+
+.events-links .panel-heading {
+  background-color: #D9D347;
 }
 
 .animate-show {

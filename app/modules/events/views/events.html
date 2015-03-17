@@ -16,9 +16,8 @@
                         </a>
                     </div>
                     <div class="media-body">
-                        <h4 class="media-heading">{{ event.name }}</h4>
-                        <p>{{ event.startDate | date:'d MMMM yyyy'}}</p>
-                        <a href="{{ event['@id'] | localiseUrl }}" class="btn btn-default btn-xs">More details</a>
+                        <h4 class="media-heading"><a href="{{ event['@id'] | localiseUrl }}" class="">{{ event.name }}</a></h4>
+                        <p>{{ event.startDate | dateFormat }}</p>
                     </div>
                 </li>
             </ul>

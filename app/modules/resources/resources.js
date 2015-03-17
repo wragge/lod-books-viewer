@@ -23,6 +23,7 @@ app.controller('ResourceCtrl', ['$scope', '$routeParams', '$filter', 'DataFactor
     var resourceId = '/resources/' + $routeParams.resourceId;
     var resource = DataFactory.getItem(resourceId);
     $scope.resource = resource;
+    $scope.creators = DataFactory.getRelation(resourceId, 'created');
     $scope.subjects = DataFactory.getRelation(resourceId, 'subjectOf');
     $scope.mentions = DataFactory.getRelation(resourceId, 'mentionedBy');
     $scope.publisher = DataFactory.getRelation(resourceId, 'publishes');

@@ -70,8 +70,16 @@ filters.filter('searchJSONLD', function() {
         var value = expression[property];
         angular.forEach(resources, function(resource) {
             if (resource.hasOwnProperty(property)) {
-              if (resource[property]['@id'].indexOf(value) !== -1) {
-                results.push(resource);
+              if (Array.isArray(resource[property])) {
+                angular.forEach(resource[property], function(item) {
+                  if (item['@id'].indexOf(value) !== -1) {
+                    results.push(resource);
+                  }
+                });
+              } else {
+                if (resource[property]['@id'].indexOf(value) !== -1) {
+                  results.push(resource);
+                }
               }
             }
           });

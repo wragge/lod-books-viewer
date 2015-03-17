@@ -26,13 +26,41 @@
                 <div class="people-links animate-show" ng-show="currentLinks.people.length > 0">
                     <accordion>
                         <accordion-group class="animate-repeat animate-show" ng-repeat="link in currentLinks.people">
-                        <accordion-heading>{{ link.name }}</accordion-heading><img class="img-responsive" ng-src="{{ link.image }}"></accordion-group>
+                        <accordion-heading>{{ link.name }}</accordion-heading><img class="img-responsive" ng-src="{{ link.image }}">
+                            <br><a class="btn btn-default btn-xs" href="{{ link['@id'] | localiseUrl }}">More</a>
+                        </accordion-group>
+                    </accordion>
+                </div>
+                <div class="organisations-links" ng-show="currentLinks.organisations.length > 0">
+                    <accordion>
+                        <accordion-group class="animate-repeat animate-show" ng-repeat="link in currentLinks.organisations">
+                        <accordion-heading>{{ link.name }}</accordion-heading><img class="img-responsive" ng-src="{{ link.image }}">
+                        <br><a class="btn btn-default btn-xs" href="{{ link['@id'] | localiseUrl }}">More</a>
+                        </accordion-group>
                     </accordion>
                 </div>
                 <div class="resources-links" ng-show="currentLinks.resources.length > 0">
                     <accordion>
                         <accordion-group class="animate-repeat animate-show" ng-repeat="link in currentLinks.resources">
-                        <accordion-heading>{{ link.name }}</accordion-heading><img class="img-responsive" ng-src="{{ link.thumbnailUrl }}"></accordion-group>
+                        <accordion-heading>{{ link.name }}</accordion-heading><img class="img-responsive" ng-src="{{ link.thumbnailUrl }}">
+                        <br><a class="btn btn-default btn-xs" href="{{ link['@id'] | localiseUrl }}">More</a>
+                        </accordion-group>
+                    </accordion>
+                </div>
+                <div class="places-links" ng-show="currentLinks.places.length > 0">
+                    <accordion>
+                        <accordion-group class="animate-repeat animate-show" ng-repeat="link in currentLinks.places">
+                        <accordion-heading>{{ link.name }}</accordion-heading><img class="img-responsive" ng-src="{{ link.image }}">
+                        <br><a class="btn btn-default btn-xs" href="{{ link['@id'] | localiseUrl }}">More</a>
+                        </accordion-group>
+                    </accordion>
+                </div>
+                <div class="events-links" ng-show="currentLinks.events.length > 0">
+                    <accordion>
+                        <accordion-group class="animate-repeat animate-show" ng-repeat="link in currentLinks.events">
+                        <accordion-heading>{{ link.name }}</accordion-heading><img class="img-responsive" ng-src="{{ link.image }}">
+                        <br><a class="btn btn-default btn-xs" href="{{ link['@id'] | localiseUrl }}">More</a>
+                        </accordion-group>
                     </accordion>
                 </div>
             </div>

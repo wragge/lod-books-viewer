@@ -6,7 +6,7 @@ app.config(['$routeProvider', '$anchorScrollProvider', function($routeProvider, 
   $routeProvider.when('/text', {
     redirectTo: '/text/1'
   });
-  $routeProvider.when('/text/:paraId', {
+  $routeProvider.when('/text/:paraId/', {
     templateUrl: 'modules/text/views/read_para.html',
     controller: 'ReadParaCtrl'
   });
@@ -57,18 +57,26 @@ app.controller('ReadParaCtrl', ['$scope', '$document', '$routeParams', '$locatio
       var resources = [];
       var places = [];
       var events = [];
+      var organisations = [];
+      console.log($scope.activeParaId);
       var activePara = TextFactory.getPara($scope.activeParaId);
       angular.forEach(activePara.links, function(link, index) {
         var item = DataFactory.getItem(link.link);
         if (typeof item !== 'undefined') {
-          if (item['@type'] === 'Person' && people.indexOf(item) === -1) {
+          if (item['@id'].indexOf('/people/') !== -1 && people.indexOf(item) === -1) {
             people.push(item);
-          } else if (item['@type'] === 'CreativeWork') {
+          } else if (item['@id'].indexOf('/resources/') !== -1 && resources.indexOf(item) === -1) {
             resources.push(item);
+          } else if (item['@id'].indexOf('/places/') !== -1 && places.indexOf(item) === -1) {
+            places.push(item);
+          } else if (item['@id'].indexOf('/organisations/') !== -1 && organisations.indexOf(item) === -1) {
+            organisations.push(item);
+          } else if (item['@id'].indexOf('/events/') !== -1 && events.indexOf(item) === -1) {
+            events.push(item);
           }
         }
       });
-      $scope.currentLinks = {'people': people, 'resources': resources};
+      $scope.currentLinks = {'people': people, 'resources': resources, 'organisations': organisations, 'places': places, 'events': events};
     };
     
     $timeout(function() {

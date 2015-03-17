@@ -1,41 +1,50 @@
     <div class="row>">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-            <h2 class="page-header">{{ person.name }}</h2>
+            <h2 class="page-header">{{ event.name }}</h2>
+                <div class="row">
+                    <div class="col-md-8">
+                    <dl class="dl-horizontal">
+                        <dt ng-if="event.startDate">
+                            Start date
+                        </dt>
+                        <dd ng-if="event.startDate">
+                            {{ event.startDate | dateFormat }}
+                        </dd>
+                        <dt ng-if="event.endDate">
+                            End date
+                        </dt>
+                        <dd ng-if="event.endDate">
+                            {{ event.endDate | dateFormat }}
+                        </dd>
+                        <dt ng-if="event.location">
+                        Location
+                        </dt>
+                        <dd ng-if="location = location()">
+                            <a href="{{ location['@id'] | localiseUrl }}">{{ location.name }}</a>
+                        </dd>
+                    </dl>
+                    </div>
+                    <div class="col-md-4">
+                        <img class="img-responsive img-thumbnail" ng-src="{{ event.image }}">
+                    </div>
+                </div>
 
-            <h3 ng-if="creatorOf.length > 0">Creator of</h3>
-            <ul class="media-list">
-                <li class="media" ng-repeat="resource in creatorOf">
-                    <a class="media-left thumbnail small-img" href="{{ resource['@id'] }}">
-                        <img ng-src="{{ resource.thumbnailUrl }}">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">{{ resource.name }}</h4>
-                    </div>
-                </li>
-            </ul>
-            <h3 ng-if="subjectOf">Subject of</h3>
-            <ul class="media-list">
-                <li class="media" ng-repeat="resource in subjectOf">
-                    <a class="media-left thumbnail small-img" href="{{ resource['@id'] }}">
-                        <img ng-src="{{ resource.thumbnailUrl }}">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">{{ resource.name }}</h4>
-                    </div>
-                </li>
-            </ul>
-            <h3 ng-if="mentionsOf">Related to</h3>
-            <ul class="media-list">
-                <li class="media" ng-repeat="resource in mentionsOf">
-                    <a class="media-left thumbnail small-img" href="{{ resource['@id'] }}">
-                        <img ng-src="{{ resource.schema_thumbnailUrl['@id'] }}">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">{{ resource['schema_name'] }}</h4>
-                    </div>
-                </li>
-            </ul>
+            <div ng-if="performers.length">
+                <h3>Major actors</h3>
+                <ul class="media-list">
+                    <li class="media" ng-include="'modules/partials/list_item.html'" ng-repeat="item in performers">
+                    </li>
+                </ul>
+            </div>
+            <div ng-if="attendees.length">
+                <h3>Attended</h3>
+                <ul class="media-list">
+                    <li class="media" ng-include="'modules/partials/list_item.html'" ng-repeat="item in attendees">
+                    </li>
+                </ul>
+            </div>
+
 
         </div>
         <div class="col-md-3"></div>

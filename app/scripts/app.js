@@ -76,6 +76,7 @@ app.factory('DataFactory', function($document, $filter) {
         //Return all resources that mention the supplied item
         var filter = {};
         filter[relation] = itemId;
+        console.log(filter);
         var items = $filter('searchJSONLD')(allData, filter);
         return items;
       };
@@ -104,6 +105,11 @@ app.factory('DataFactory', function($document, $filter) {
     dataFactory.getPlaces = function() {
         var places = $filter('filter')(allData, {'@id': '/places/'});
         return places;
+      };
+
+    dataFactory.getEvents = function() {
+        var events = $filter('filter')(allData, {'@id': '/events/'});
+        return events;
       };
 
     dataFactory.getImages = function(itemId) {
@@ -278,7 +284,7 @@ app.controller('AppCtrl', ['$scope', '$location', 'TextFactory', function($scope
       if (id.indexOf('/people/') !== -1) {
         thisClass = 'people';
       } else if (id.indexOf('/organisations/') !== -1) {
-        thisClass = 'people';
+        thisClass = 'organisation';
       } else if (id.indexOf('/resources/') !== -1) {
         thisClass = 'resource';
       } else if (id.indexOf('/events/') !== -1) {
