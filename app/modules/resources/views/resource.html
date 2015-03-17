@@ -91,6 +91,13 @@
                     </li>
                 </ul>
             </div>
+            <div ng-if="hasParts.length">
+                <h3>Parts</h3>
+                <ul class="media-list">
+                    <li class="media" ng-include="'modules/partials/list_item.html'" ng-repeat="item in hasParts">
+                    </li>
+                </ul>
+            </div>
             <div ng-if="subjects.length">
                 <h3>Subjects</h3>
                 <ul class="media-list">
