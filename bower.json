@@ -26,5 +26,14 @@
     "angular-mocks": "~1.3.0",
     "angular-scenario": "~1.3.0"
   },
-  "appPath": "app"
+  "appPath": "app",
+  "overrides": {
+    "angular-timeline": {
+      "main": [
+        "src/angular-timeline.js",
+        "src/angular-timeline.css",
+        "src/angular-timeline-bootstrap.css"
+      ]
+    }
+  }
 }
